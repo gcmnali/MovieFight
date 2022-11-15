@@ -32,8 +32,9 @@ function createAutoComplete(side) {
             // Select the movie
             option.addEventListener('click', () => {
                 dropdown.classList.remove('is-active');
+                dropdown.classList.add("is-hidden");
                 input.value = item.Title;
-                
+
                 // Hide the tutorial
                 document.querySelector('.tutorial').classList.add('is-hidden')
                 // Show the movie summary

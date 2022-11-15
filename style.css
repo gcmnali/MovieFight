@@ -33,7 +33,7 @@ header {
   display: flex;
   flex-direction: column;
   color: whitesmoke;
-  width: 30vw;
+  width: 40vw;
 }
 
 .wings input {
@@ -50,24 +50,42 @@ header {
   margin-top: 4rem;
 }
 
-/* later */
-.dropdown-item {
-  display: flex;
-  width: 25vw;
-  height: 100px;
+.dropdown {
+  width: 100%;
+  /* width: 60px;
+  height: 100px; */
 }
 
-.dropdown-item a {
+.dropdown-menu {
+  width: 100%;
+}
+
+.dropdown-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1vh;
+  margin-top: 1vh;
+  width: 100%;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  display: flex;
+  width: 40vw;
+  height: 100px;
+  display: flex;
   align-items: center;
 }
 
 .dropdown-item img {
   margin-right: 2rem;
+  width: 65px;
 }
 
 .is-active {
-  width: 60px;
-  height: 100px;
+  display: block;
+}
+
+.is-hidden {
+  display: none;
 }
