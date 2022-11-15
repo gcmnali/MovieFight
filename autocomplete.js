@@ -4,6 +4,7 @@ function createAutoComplete(side) {
     let root = document.querySelector(sideAutoComplete);
     const dropdown = root.querySelector('.dropdown');
     const resultsWrapper = root.querySelector('.results');
+    
 
     // Delay the search input
     // List the movies in the dropdown menu after searching
@@ -20,6 +21,7 @@ function createAutoComplete(side) {
         // Activate dropdown menu
         dropdown.classList.add('is-active');
 
+        resultsWrapper.innerHTML = "";
         // List the movies in the input
         for (let item of items) {
             const option = document.createElement('a');
