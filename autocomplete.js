@@ -20,6 +20,7 @@ function createAutoComplete(side) {
         // Activate dropdown menu
         dropdown.classList.add('is-active');
 
+        resultsWrapper.innerHTML = "";
         // List the movies in the input
         for (let item of items) {
             const option = document.createElement('a');
