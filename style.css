@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
-  --warning: #FCE700;
-  --passed: #3A8891;
+  --warning: #cecdcd;
+  --passed: #FCE700;
   --black: rgb(24, 24, 24);
   --white: rgb(255, 255, 255);
   --red: rgb(229, 8, 21);
@@ -137,6 +137,7 @@ header {
   flex-shrink: 1;
   text-align: left;
   line-height: 1.5rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 figure {
@@ -159,11 +160,13 @@ figure .image img {
   margin-bottom: 0.5em;
   font-weight: 600;
   line-height: 1.125;
+  font-family: 'Roboto', sans-serif;
 }
 
 .content h4 {
   font-size: 1.25em;
   margin-bottom: 0.8em;
+  font-family: 'Roboto', sans-serif;
 }
 
 .notification {
@@ -172,22 +175,25 @@ figure .image img {
   height: 18vh;
   padding-top: 25px;
   padding-left: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .notification .title {
   font-size: 2rem;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .notification .subtitle {
   font-size: 1.5rem;
   margin: 0;
   font-weight: lighter;
+  font-family: 'Roboto', sans-serif;
 }
 
 .notification.is-primary {
   background-color: var(--passed);
-  color: #fff;
+  color: #060606;
 }
 
 .notification.is-warning {
