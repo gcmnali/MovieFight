@@ -4,6 +4,9 @@
 :root {
   --warning: #FCE700;
   --passed: #3A8891;
+  --black: rgb(24, 24, 24);
+  --white: rgb(255, 255, 255);
+  --red: rgb(229, 8, 21);
 }
 
 * {
@@ -14,20 +17,18 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: whitesmoke;
-  font-family: 'Special Elite', cursive;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: rgb(229, 8, 21);
+  color: var(--red);
   padding: 1rem;
   font-size: 1.5rem;
-
+  font-family: 'Special Elite', cursive;
 }
 
 .column-container {
@@ -38,8 +39,9 @@ header {
 .wings {
   display: flex;
   flex-direction: column;
-  color: whitesmoke;
-  width: 40vw;
+  color: var(--white);
+  width: 45vw;
+  padding: 0, 35vw;
 }
 
 .wings input {
@@ -48,12 +50,17 @@ header {
   margin-top: 1rem;
 }
 
+.wings label {
+  font-family: 'Special Elite', cursive;
+}
+
 .title-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
+  font-family: 'Special Elite', cursive;
 }
 
 .dropdown {
@@ -99,7 +106,7 @@ header {
 .left-summary,
 .right-summary {
   width: 40vw;
-  font-family: ;
+  font-family: 'Roboto', sans-serif;
 }
 
 .media {
@@ -129,10 +136,16 @@ header {
   flex-grow: 1;
   flex-shrink: 1;
   text-align: left;
+  line-height: 1.5rem;
+}
+
+figure {
+  margin: .2rem;
+  padding: 0;
 }
 
 figure .image img {
-  width: 128px;
+  width: 150px;
 }
 
 .image img {
@@ -151,6 +164,25 @@ figure .image img {
 .content h4 {
   font-size: 1.25em;
   margin-bottom: 0.8em;
+}
+
+.notification {
+  border-radius: 5px;
+  margin-bottom: .5rem;
+  height: 18vh;
+  padding-top: 25px;
+  padding-left: 20px;
+}
+
+.notification .title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.notification .subtitle {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: lighter;
 }
 
 .notification.is-primary {
