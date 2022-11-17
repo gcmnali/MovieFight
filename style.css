@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --warning: #FCE700;
+  --passed: #3A8891;
+}
 
 * {
   box-sizing: border-box;
@@ -88,4 +94,71 @@ header {
 
 .is-hidden {
   display: none;
+}
+
+.left-summary,
+.right-summary {
+  width: 40vw;
+  font-family: ;
+}
+
+.media {
+  align-items: flex-start;
+  display: flex;
+  text-align: left;
+}
+
+.media-left {
+  margin-right: 1rem;
+}
+
+.media-left,
+.media-right {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.image {
+  display: block;
+  position: relative;
+}
+
+.media-content {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: left;
+}
+
+figure .image img {
+  width: 128px;
+}
+
+.image img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.content h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+.content h4 {
+  font-size: 1.25em;
+  margin-bottom: 0.8em;
+}
+
+.notification.is-primary {
+  background-color: var(--passed);
+  color: #fff;
+}
+
+.notification.is-warning {
+  background-color: var(--warning);
+  color: rgba(0, 0, 0, 0.7);
 }
