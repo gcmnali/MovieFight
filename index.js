@@ -1,11 +1,7 @@
-// Activate the autocomplete for right and left columns
-createAutoComplete("left");
-createAutoComplete("right");
+// ******************************** COMPARE TWO MOVIES ******************************** //
 
 let leftMovie;
 let rightMovie;
-
-// ****************************** COMPARE TWO MOVIES *********************** //
 
 // Fetch the selected movie
 async function onMovieSelect(movie, summaryElement, side) {
@@ -100,8 +96,6 @@ function movieTemplate(movieDetail) {
 }
 
 
-
-
 // *************************** SEARCH DROPDOWN MENU *********************** //
 
 function createAutoComplete(side) {
@@ -190,3 +184,7 @@ const debounce = (func, delay = 1000) => {
     }, delay);
   };
 };
+
+// Activate the autocomplete for right and left columns
+createAutoComplete("left");
+createAutoComplete("right");
