@@ -5,12 +5,14 @@ let rightMovie;
 
 // Fetch the selected movie
 async function onMovieSelect(movie, summaryElement, side) {
+  // now we are fetching detailed data about chosen movie
   const response = await axios.get('http://www.omdbapi.com/', {
     params: {
       apikey: 'f3ea3c53',
       i: movie.imdbID
     }
   })
+  // and we are creating our description
   summaryElement.innerHTML = movieTemplate(response.data);
   if (side === 'left') {
     leftMovie = response.data;
@@ -18,18 +20,23 @@ async function onMovieSelect(movie, summaryElement, side) {
     rightMovie = response.data;
   }
   // Start Comparison
+  // when two movies are chosen we are comparing them
   if (leftMovie && rightMovie) {
     runComparison();
   }
+  // Comparison
   function runComparison() {
     const leftSideStats = document.querySelectorAll('#left-summary .notification');
     const rightSideStats = document.querySelectorAll('#right-summary .notification');
 
     leftSideStats.forEach((leftStat, index) => {
+      // for all information we are comparing 
       const rightStat = rightSideStats[index];
       const leftSideValue = parseInt(leftStat.dataset.value);
       const rightSideValue = parseInt(rightStat.dataset.value);
 
+      // and we are changing the color of the info 
+      // which is greater
       if (rightSideValue > leftSideValue) {
         leftStat.classList.remove('is-primary');
         leftStat.classList.add('is-warning');
@@ -48,7 +55,7 @@ function movieTemplate(movieDetail) {
   const metascore = parseInt(movieDetail.Metascore);
   const imdbRating = parseFloat(movieDetail.imdbRating);
   const imdbVotes = parseInt(movieDetail.imdbVotes.replace(/,/g, ''));
-  const awards = movieDetail.Awards.split('').reduce((prev, word) => {
+  const awards = movieDetail.Awards.split(' ').reduce((prev, word) => {
     const value = parseInt(word);
     if (isNaN(value)) {
       return prev;
@@ -95,7 +102,7 @@ function movieTemplate(movieDetail) {
  `;
 }
 
-
+// 222222222222222222222222222222222222222222222222222222222222222222222222
 // *************************** SEARCH DROPDOWN MENU *********************** //
 
 function createAutoComplete(side) {
@@ -109,6 +116,9 @@ function createAutoComplete(side) {
   // Delay the search input
   // List the movies in the dropdown menu after searching
   const input = root.querySelector('input');
+
+  // in every input(when user types something)
+  // we fetch the possible options
   async function onInput(event) {
     const items = await fetchData(event.target.value);
 
@@ -123,16 +133,21 @@ function createAutoComplete(side) {
     dropdown.classList.remove('is-hidden');
     dropdown.classList.add('is-active');
 
+    // before creating the list we are cleaning the list
     resultsWrapper.innerHTML = "";
     // List the movies in the input
     for (let item of items) {
+      // we are creating html DOM elements for options
+      // and putting them in the dropdown list
       const option = document.createElement('a');
 
       option.classList.add('dropdown-item')
       option.innerHTML = `<img src="${item.Poster === 'N/A' ? '' : item.Poster}" />${item.Title} (${item.Year})`;
 
       // Select the movie
+      // we are adding click event to option
       option.addEventListener('click', () => {
+        // when an option is clicked we are closing the dropdown
         dropdown.classList.remove('is-active');
         dropdown.classList.add('is-hidden');
         input.value = item.Title;
@@ -188,6 +203,8 @@ const debounce = (func, delay = 1000) => {
   };
 };
 
+// 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 // Activate the autocomplete for right and left columns
+// We add search capabilities and a dropdown menu for search results to the both sides
 createAutoComplete("left");
 createAutoComplete("right");
