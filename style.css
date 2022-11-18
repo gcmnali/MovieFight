@@ -48,6 +48,7 @@ header {
   height: 5vh;
   border-radius: 5px;
   margin-top: 1rem;
+  font-size: 16px;
 }
 
 .wings label {
@@ -199,4 +200,16 @@ figure .image img {
 .notification.is-warning {
   background-color: var(--warning);
   color: rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 1200px) {
+  .media{
+    flex-wrap: wrap;
+  }
+  .notification.is-primary p {
+    font-size: 16px;
+  }
+  .notification.is-warning p {
+    font-size: 16px;
+  }
 }
