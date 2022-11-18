@@ -115,10 +115,12 @@ function createAutoComplete(side) {
     // Remove dropdown if there's no movie in the input
     if (!items.length) {
       dropdown.classList.remove('is-active');
+      dropdown.classList.add('is-hidden');
       return;
     }
 
     // Activate dropdown menu
+    dropdown.classList.remove('is-hidden');
     dropdown.classList.add('is-active');
 
     resultsWrapper.innerHTML = "";
@@ -151,6 +153,7 @@ function createAutoComplete(side) {
   document.addEventListener('click', event => {
     if (!root.contains(event.target)) {
       dropdown.classList.remove('is-active')
+      dropdown.classList.add('is-hidden');
     }
   });
 }
